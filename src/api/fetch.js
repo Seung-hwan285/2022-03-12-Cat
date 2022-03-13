@@ -14,8 +14,33 @@ const request = async (url) => {
 
 
 export const api = {
+    fetchImage : async keyword=>{
 
-    fetchImage : keyword=>{
+        const breeds = (await api.searchBreedByName(keyword)).map((breed)=>{return breed.id;});
+        const prmoisseArr = breeds.map(breed=>{
+           return request(`${API_ENDPOINT}/images/search?limit=10&breed_ids=${breed}`);
+        });
+
+
+        //프로미스로 반환
+       return  Promise.all(prmoisseArr).then((responses)=>{
+            let result =[];
+
+            // result에 나누어진 배열들을 전부 합침
+            responses.forEach((response)=>{
+                result = result.concat(response);
+            });
+
+
+
+            return result;
+        });
+
+        },
+
+
+
+    searchBreedByName: keyword => {
         return request(`${API_ENDPOINT}/breeds/search?q=${keyword}`);
     },
 

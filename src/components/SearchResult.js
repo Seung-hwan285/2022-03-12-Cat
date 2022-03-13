@@ -1,35 +1,41 @@
+import Item from "./Item.js";
+
 export default class SearchResult{
 
-    constructor($target) {
-        // (div) className : bottom
-        this.target=$target;
 
+    // App.js bottom 삽입
+    constructor($target) {
+        this.$target=$target;
         this.data=[];
         this.render();
     }
 
-    updateData(data){
+    updateDate(data){
+        // 하나씩 data 배열에 삽입
         this.data=data;
+        // 클로저 개념 -> 내부 블럭에서만 실행
         this.render();
     }
 
-    render(){
 
-        const isWrapperGroup = document.createElement('div');
+    render() {
 
-        isWrapperGroup.className = 'wrapper';
+        const wrapper = document.createElement('div');
 
+        wrapper.className='wrapper';
 
         const itemGroup = document.createElement('div');
-        itemGroup.className = 'item-group';
 
+        itemGroup.className='item-group';
 
+        // 사진 그룹 , 고양이 객체 데이터
         this.data.map((cat)=>{
-            console.log(cat);
+            console.log(cat)
+            new Item(itemGroup,cat);
         });
 
-
-        isWrapperGroup.appendChild(itemGroup);
-        this.target.appendChild(isWrapperGroup);
+        wrapper.appendChild(itemGroup);
+        // App.js bottom에 wrapper  삽입
+        this.$target.appendChild(wrapper);
     }
 }

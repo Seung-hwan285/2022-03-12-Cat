@@ -1,6 +1,5 @@
 export default class SearchBar {
 
-
     constructor($target,keyword) {
 
         // top
@@ -10,11 +9,6 @@ export default class SearchBar {
         this.render();
     }
 
-
-
-
-
-// d
     // body 태그안에 삽입
     render(){
 
@@ -25,13 +19,12 @@ export default class SearchBar {
         searchBox.className='search-box';
         searchBox.placeholder='고양이를 검색하세요!';
 
+
         searchBox.addEventListener("keyup",()=>{
             this.onKeyword(searchBox.value);
         });
 
-
         wrapper.appendChild(searchBox);
-
 
         this.$target.appendChild(wrapper);
     }

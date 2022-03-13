@@ -1,6 +1,3 @@
-
-
-
 import SearchResult from "./components/SearchResult.js";
 import SearchBar from "./components/SearchBar.js";
 import {api} from "./api/fetch.js";
@@ -17,17 +14,17 @@ export default class App {
 
 
         const searchBar = new SearchBar(top,keyword =>{
-
             api.fetchImage(keyword).then(cats=>{
-                console.log(cats);
+
+                searchResult.updateDate(cats);
             });
 
         });
 
+        const searchResult = new SearchResult(bottom);
 
-        const searchResult= new SearchResult(bottom);
         document.body.appendChild(top);
-        document.body.appendChild(bottom)
+        document.body.appendChild(bottom);
     }
 
 }
