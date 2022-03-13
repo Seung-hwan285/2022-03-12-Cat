@@ -30,7 +30,7 @@ export default class SearchResult{
 
         // 사진 그룹 , 고양이 객체 데이터
         this.data.map((cat)=>{
-            console.log(cat)
+
             new Item(itemGroup,cat);
         });
 

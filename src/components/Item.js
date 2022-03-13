@@ -10,7 +10,7 @@ export default class Item{
         const url = this.cat.url;
         const {temperament} = this.cat.breeds[0];
         const {origin} = this.cat.breeds[0];
-        console.log(origin);
+
         const itemWrapper =document.createElement('div');
 
         itemWrapper.className='wrapper';
