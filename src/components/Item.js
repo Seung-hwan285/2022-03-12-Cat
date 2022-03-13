@@ -29,11 +29,13 @@ export default class Item{
         const itemDescription = document.createElement('div');
         itemDescription.className='item-description';
 
-
+        // temperament
         const itemTemper = document.createElement('p');
         itemTemper.className='item-temper';
         itemTemper.innerText=temperament;
 
+
+        // origin
         const itemOrigin = document.createElement('p');
         itemOrigin.className='item-origin';
         itemOrigin.innerText=origin;
