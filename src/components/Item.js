@@ -16,8 +16,7 @@ export default class Item{
         itemWrapper.className='wrapper';
 
         // item
-        const item = document.createElement('div');
-
+        const item =document.createElement('div');
         item.className='item';
 
         // item 이미지
@@ -39,7 +38,6 @@ export default class Item{
         const itemOrigin = document.createElement('p');
         itemOrigin.className='item-origin';
         itemOrigin.innerText=origin;
-
 
         itemDescription.appendChild(itemTemper);
         itemDescription.appendChild(itemOrigin);

@@ -22,3 +22,22 @@
 .bottom{
     padding-top: 50px;
 }
+
+.item-group{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 50px;
+}
+
+
+.item{
+    display: flex;
+    flex-direction: column;
+    height: 300px;
+    width: 200px;
+}
+
+.item-img{
+    height: 50%;
+    width: 100%;
+}
