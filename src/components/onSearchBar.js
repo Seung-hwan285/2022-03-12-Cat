@@ -25,7 +25,8 @@ export default class OnSearchBar {
         const searchBtn = document.createElement('button');
         searchBtn.className='search-btn';
         searchBtn.innerText='버튼';
-        
+
+
 
         searchBtn.addEventListener("submit",(e)=>{
             e.preventDefault();

@@ -4,10 +4,11 @@ describe('Cat 테스트',()=> {
     });
 
 
-    it('키워드 별로 고양이 화면에 출력 테스트',()=>{
+    it('키워드 별로 고양이 화면에 출력 테스트 (Click)',()=>{
         const $value = cy.get('input');
 
         $value.type('no');
+        cy.get('.search-btn').click();
 
 
         //img에 item-img class가 있는지로 테스트 진행
@@ -18,4 +19,19 @@ describe('Cat 테스트',()=> {
 
 
     });
+    it('키워드 별로 고양이 화면에 출력 테스트 (Enter)',()=>{
+
+
+        const $value = cy.get('input');
+
+
+        $value.type('no');
+
+        $value.type('{enter}');
+
+        cy.get('img')
+            .each(($el)=>
+            cy.wrap($el).should('have.class','item-img'));
+    });
+
 });
