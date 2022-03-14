@@ -47,5 +47,7 @@ export default class Item{
         itemWrapper.appendChild(item);
         this.itemGroup.appendChild(itemWrapper);
 
+
+
     }
 }

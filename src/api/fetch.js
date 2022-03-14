@@ -14,30 +14,23 @@ const request = async (url) => {
 
 
 export const api = {
-    fetchImage : async keyword=>{
 
-        const breeds = (await  api.searchBreedByName(keyword)).map((breed)=>{return breed.id;});
+    fetchImage : async keyword=>{
+        const breeds = (await api.searchBreedByName(keyword)).map((breed)=>{return breed.id;});
         const prmoisseArr = breeds.map(breed=>{
-           return request(`${API_ENDPOINT}/images/search?limit=10&breed_ids=${breed}`);
+            return request(`${API_ENDPOINT}/images/search?limit=50&breed_ids=${breed}`);
         });
 
-
-        //프로미스로 반환
-        return Promise.all(prmoisseArr).then(responses=>{
-
-            let result= [];
-
+        return Promise.all(prmoisseArr).then((responses)=>{
+            let result =[];
             responses.forEach((response)=>{
-
-                result = result.concat(response);
+                    result=result.concat(response);
             });
 
+            console.log(result);
             return result;
         });
-
         },
-
-
 
     searchBreedByName: keyword => {
         return request(`${API_ENDPOINT}/breeds/search?q=${keyword}`);

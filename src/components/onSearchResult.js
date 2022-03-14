@@ -1,19 +1,19 @@
 import Item from "./Item.js";
 
-export default class SearchResult{
+export default class OnSearchResult {
 
 
     // App.js bottom 삽입
     constructor($target) {
         this.$target=$target;
         this.data=[];
-        this.render();
+
     }
 
     updateDate(data){
         // 하나씩 data 배열에 삽입
         this.data=data;
-        // 클로저 개념 -> 내부 블럭에서만 실행
+
         this.render();
     }
 

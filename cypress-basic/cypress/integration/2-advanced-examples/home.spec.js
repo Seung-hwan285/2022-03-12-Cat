@@ -12,7 +12,8 @@ describe('Cat 테스트',()=> {
 
         //img에 item-img class가 있는지로 테스트 진행
         cy.get('img')
-            .each(($el)=> cy.wrap($el).should('have.class','item-img'));
+            .each(($el)=>
+                cy.wrap($el).should('have.class','item-img'));
 
 
 

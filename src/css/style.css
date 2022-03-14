@@ -15,7 +15,6 @@
 }
 
 
-
 .item-group{
     display: flex;
     flex-wrap: wrap;
@@ -24,8 +23,6 @@
 
 
 .item{
-    display: flex;
-    flex-direction: column;
     height: 300px;
     width: 200px;
 }
@@ -33,4 +30,9 @@
 .item-img{
     height: 50%;
     width: 100%;
+}
+
+.search-btn{
+    font-size: 20px;
+    float: right;
 }
