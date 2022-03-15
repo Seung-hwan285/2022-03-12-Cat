@@ -38,3 +38,19 @@
     float: right;
 }
 
+
+.wrapper .form-data{
+    margin-bottom: 5px;
+}
+.wrapper .recent-keyword{
+    margin-top: 500px;
+
+}
+
+.recent-keyword .clip{
+    margin-top: 20px;
+    font-size: 19px;
+    border-radius: 5px;
+    background-color: orange;
+    font-weight: bold;
+}

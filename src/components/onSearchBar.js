@@ -21,7 +21,7 @@ export default class OnSearchBar {
         wrapper.className='wrapper';
         const span =document.createElement('span');
         span.className='recent-keyword';
-        span.innerText="최근 검색어 : ";
+
 
         const form = document.createElement('form');
         form.className='form-data';
@@ -44,10 +44,8 @@ export default class OnSearchBar {
             searchBox.value="";
             let keyWordLen = this.keyWordlist.length;
 
-
-
             if(keyWordLen <=3){
-                span.innerHTML=`최근 검색어 : `+ this.keyWordlist.map(this.rencentKeyWordTemplate).join(" ");
+                span.innerHTML=this.keyWordlist.map(this.rencentKeyWordTemplate).join(" ");
             }
         });
 
@@ -61,7 +59,7 @@ export default class OnSearchBar {
 
 
             if(keyWordLen <= 3){
-                span.innerHTML=`최근 검색어 : `+this.keyWordlist.map(this.rencentKeyWordTemplate).join(" ");
+                span.innerHTML=this.keyWordlist.map(this.rencentKeyWordTemplate).join(" ");
             }
         });
 
