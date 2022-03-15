@@ -1,4 +1,4 @@
-import Item from "./Item.js";
+import OnItem from "./onItem.js";
 
 export default class OnSearchResult {
 
@@ -31,7 +31,7 @@ export default class OnSearchResult {
         // 사진 그룹 , 고양이 객체 데이터
         this.data.map((cat)=>{
 
-            new Item(itemGroup,cat);
+            new OnItem(itemGroup,cat);
         });
 
         wrapper.appendChild(itemGroup);

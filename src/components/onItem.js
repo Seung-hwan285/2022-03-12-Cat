@@ -1,4 +1,4 @@
-export default class Item{
+export default class OnItem {
     constructor(itemGroup,cat) {
         this.itemGroup=itemGroup;
         this.cat=cat;
@@ -41,6 +41,8 @@ export default class Item{
 
         itemDescription.appendChild(itemTemper);
         itemDescription.appendChild(itemOrigin);
+
+
 
         item.appendChild(itemImg);
         item.appendChild(itemDescription);

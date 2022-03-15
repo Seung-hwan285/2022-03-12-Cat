@@ -6,13 +6,22 @@ export default class OnSearchBar {
         // keyword
         this.onKeyword = keyword;
         this.render();
+
+        this.keyWordlist=[];
+    }
+
+
+    rencentKeyWordTemplate(keyword){
+        return `<a class="clip">${keyword}</a>`
     }
 
     // body 태그안에 삽입
     render(){
         const wrapper = document.createElement('wrapper');
         wrapper.className='wrapper';
-
+        const span =document.createElement('span');
+        span.className='recent-keyword';
+        span.innerText="최근 검색어 : ";
 
         const form = document.createElement('form');
         form.className='form-data';
@@ -30,20 +39,40 @@ export default class OnSearchBar {
 
         searchBtn.addEventListener("submit",(e)=>{
             e.preventDefault();
+            this.keyWordlist.push(searchBox.value);
             this.onKeyword(searchBox.value);
+            searchBox.value="";
+            let keyWordLen = this.keyWordlist.length;
+
+
+
+            if(keyWordLen <=3){
+                span.innerHTML=`최근 검색어 : `+ this.keyWordlist.map(this.rencentKeyWordTemplate).join(" ");
+            }
         });
 
         searchBtn.addEventListener("click",(e)=>{
             e.preventDefault();
+            this.keyWordlist.push(searchBox.value);
             this.onKeyword(searchBox.value);
+            searchBox.value="";
+
+            let keyWordLen = this.keyWordlist.length;
+
+
+            if(keyWordLen <= 3){
+                span.innerHTML=`최근 검색어 : `+this.keyWordlist.map(this.rencentKeyWordTemplate).join(" ");
+            }
         });
+
+
 
 
         form.appendChild(searchBox);
         form.appendChild(searchBtn);
 
         wrapper.appendChild(form);
-
+        wrapper.appendChild(span);
         this.$target.appendChild(wrapper);
     }
 }
