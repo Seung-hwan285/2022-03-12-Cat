@@ -57,7 +57,6 @@ export default class OnSearchBar {
 
             let keyWordLen = this.keyWordlist.length;
 
-
             if(keyWordLen <= 3){
                 span.innerHTML=this.keyWordlist.map(this.rencentKeyWordTemplate).join(" ");
             }

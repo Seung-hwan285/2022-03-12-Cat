@@ -15,11 +15,9 @@ export default class App {
 
         const searchBar = new OnSearchBar(top, keyword =>{
 
-
             api.fetchImage(keyword).then((cat)=>{
-
                 searchResult.updateDate(cat);
-            })
+            });
 
         });
 

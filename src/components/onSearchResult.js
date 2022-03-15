@@ -12,6 +12,8 @@ export default class OnSearchResult {
 
     updateDate(data){
         // 하나씩 data 배열에 삽입
+        this.$target.innerHTML='';
+
         this.data=data;
 
         this.render();
