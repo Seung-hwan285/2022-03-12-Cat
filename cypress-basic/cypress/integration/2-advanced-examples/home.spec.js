@@ -4,34 +4,51 @@ describe('Cat 테스트',()=> {
     });
 
 
-    it('키워드 별로 고양이 화면에 출력 테스트 (Click)',()=>{
-        const $value = cy.get('input');
+    // it('키워드 별로 고양이 화면에 출력 테스트 (Click)',()=>{
+    //     const $value = cy.get('input');
+    //
+    //     $value.type('no');
+    //     cy.get('.search-btn').click();
+    //
+    //
+    //     //img에 item-img class가 있는지로 테스트 진행
+    //     cy.get('img')
+    //         .each(($el)=>
+    //             cy.wrap($el).should('have.class','item-img'));
+    //
+    //
+    //
+    // });
+    // it('키워드 별로 고양이 화면에 출력 테스트 (Enter)',()=>{
+    //
+    //
+    //     const $value = cy.get('input');
+    //
+    //
+    //     $value.type('no');
+    //
+    //     $value.type('{enter}');
+    //
+    //     cy.get('img')
+    //         .each(($el)=>
+    //         cy.wrap($el).should('have.class','item-img'));
+    // });
 
-        $value.type('no');
-        cy.get('.search-btn').click();
+    it('키워드 검색하면 리스트 3개만 나오는지 테스트',()=>{
+
+        let testKeyWord=['ae','no'];
 
 
-        //img에 item-img class가 있는지로 테스트 진행
-        cy.get('img')
-            .each(($el)=>
-                cy.wrap($el).should('have.class','item-img'));
+        testKeyWord.forEach((keyword)=>{
+            const $value = cy.get('input');
+            $value.type(keyword);
+            cy.get('.search-btn').click();
 
 
-
-    });
-    it('키워드 별로 고양이 화면에 출력 테스트 (Enter)',()=>{
-
-
-        const $value = cy.get('input');
+        });
+        cy.get('.recent-keyword').find('.clip').should('have.length',2);
 
 
-        $value.type('no');
-
-        $value.type('{enter}');
-
-        cy.get('img')
-            .each(($el)=>
-            cy.wrap($el).should('have.class','item-img'));
     });
 
 });
