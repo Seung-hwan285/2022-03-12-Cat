@@ -19,11 +19,11 @@ export default class App {
         darkBtn.innerText='😸';
 
 
-
         const searchBar = new OnSearchBar(top, keyword =>{
 
             api.fetchImage(keyword).then((cat)=>{
                 searchResult.updateDate(cat);
+
             });
 
         });
@@ -34,12 +34,11 @@ export default class App {
                 this.darkModeChange();
         });
 
-
-
         this.modalHandlerView();
         document.body.appendChild(darkBtn);
         document.body.appendChild(top);
         document.body.appendChild(bottom);
+
     }
 
     modalHandlerView(){

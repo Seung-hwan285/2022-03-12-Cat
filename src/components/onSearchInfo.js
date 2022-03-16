@@ -8,8 +8,16 @@ export default class onSearchInfo{
 
 
     render(){
+
+        if(this.data){
+
+            const {temperment , origin , name}= this.data.breeds[0];
+            console.log(name);
+        }
+
         const modal = document.createElement('div');
         modal.className='modal';
+        modal.classList.add('hidden');
 
         const info = document.createElement('div');
         info.className='info';
@@ -23,7 +31,8 @@ export default class onSearchInfo{
 
         const infoTitle = document.createElement('p');
         infoTitle.className='info-title';
-        infoTitle.innerText='고양이 제목 뭐치지?';
+        infoTitle.innerText='Norwegian Fores Cat';
+
         const infoImg = document.createElement('img');
         infoImg.className='info-img';
 
@@ -38,6 +47,11 @@ export default class onSearchInfo{
 
 
 
+        closeBtn.addEventListener("click",()=>{
+            modal.classList.add('hidden');
+        });
+
+
         infoDescription.appendChild(infoTemper);
         infoDescription.appendChild(infoOrigin);
 
@@ -48,7 +62,6 @@ export default class onSearchInfo{
         info.appendChild(infoHeader);
         info.appendChild(infoImg);
         info.appendChild(infoDescription);
-
 
 
         modal.appendChild(info);

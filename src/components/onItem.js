@@ -2,14 +2,16 @@ export default class OnItem {
     constructor(itemGroup,cat) {
         this.itemGroup=itemGroup;
         this.cat=cat;
+
         this.render();
+
     }
 
     render() {
 
         const url = this.cat.url;
-        const {temperament} = this.cat.breeds[0];
-        const {origin} = this.cat.breeds[0];
+        const {temperament,origin} = this.cat.breeds[0];
+
 
         const itemWrapper =document.createElement('div');
 
@@ -38,6 +40,14 @@ export default class OnItem {
         const itemOrigin = document.createElement('p');
         itemOrigin.className='item-origin';
         itemOrigin.innerText=origin;
+
+
+        item.addEventListener("click",(e)=>{
+            console.log({origin});
+            const $modal = document.querySelector('.modal');
+            $modal.classList.remove('hidden')
+        });
+
 
         itemDescription.appendChild(itemTemper);
         itemDescription.appendChild(itemOrigin);

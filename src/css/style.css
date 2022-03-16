@@ -7,6 +7,7 @@
     align-items: center;
     margin-top: 50px;
     margin-bottom: 100px;
+
 }
 
 
@@ -77,4 +78,42 @@ body{
     background-color: black;
     color: white;
 }
+.hidden{
+    visibility: hidden;
+}
 
+
+.modal{
+    position: fixed;
+    display: flex;
+
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0,0,0,0.5);
+
+}
+
+.info{
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    width: 40vw;
+    height: 30vw;
+}
+.info .info-header{
+    display: flex;
+    justify-content: space-between;
+}
+.info .info-header{
+    font-size: 20px;
+}
+.info .info-header .info-title{
+    margin: 10px;
+}
+
+.info .close-btn{
+    margin: 13px;
+    font-size: 20px;
+}

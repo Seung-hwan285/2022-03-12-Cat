@@ -6,6 +6,7 @@ export default class OnSearchResult {
     // App.js bottom 삽입
     constructor($target) {
         this.$target=$target;
+
         this.data=[];
 
     }
