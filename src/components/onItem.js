@@ -42,10 +42,10 @@ export default class OnItem {
         itemOrigin.innerText=origin;
 
 
-        item.addEventListener("click",(e)=>{
+        item.addEventListener("click",()=>{
             console.log({origin});
             const $modal = document.querySelector('.modal');
-            $modal.classList.remove('hidden')
+            $modal.classList.remove('hidden');
         });
 
 
