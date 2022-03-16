@@ -1,6 +1,7 @@
 import OnSearchResult from "./components/onSearchResult.js";
 import OnSearchBar from "./components/onSearchBar.js";
 import {api} from "./api/fetch.js";
+import onSearchInfo from "./components/onSearchInfo.js";
 
 
 export default class App {
@@ -32,9 +33,17 @@ export default class App {
         darkBtn.addEventListener("click",()=>{
                 this.darkModeChange();
         });
+
+
+
+        this.modalHandlerView();
         document.body.appendChild(darkBtn);
         document.body.appendChild(top);
         document.body.appendChild(bottom);
+    }
+
+    modalHandlerView(){
+        return new onSearchInfo(document.body);
     }
 
     darkModeChange(){

@@ -51,14 +51,19 @@ describe('Cat 테스트',()=> {
     //
     // });
 
-    it('다크모드 테스트',()=>{
+    // it('다크모드 테스트',()=>{
+    //
+    //     let $darkBtn = cy.get('.dark');
+    //
+    //     $darkBtn.click();
+    //
+    //     cy.get('body')
+    //         .each(($el)=>cy.wrap($el).should('have.class','dark-mode'));
+    // });
 
-        let $darkBtn = cy.get('.dark');
+    it('모달 테스트',()=>{
 
-        $darkBtn.click();
-
-        cy.get('body')
-            .each(($el)=>cy.wrap($el).should('have.class','dark-mode'));
     });
+
 
 });
