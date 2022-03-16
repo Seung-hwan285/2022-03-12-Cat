@@ -61,9 +61,38 @@ describe('Cat 테스트',()=> {
     //         .each(($el)=>cy.wrap($el).should('have.class','dark-mode'));
     // });
 
-    it('모달 테스트',()=>{
+    it('모달 Open 테스트',()=>{
+
+        const $value = cy.get('input');
+        $value.type('ae');
+
+        cy.get('.search-btn').click();
+        cy.wait(1000);
+
+        const el=cy.get('.item').eq(1);
+
+        el.click();
+
+
+        cy.get('.modal').should('have.class','modal');
 
     });
 
+
+    it('모달 Close 테스트',()=>{
+
+        const $value = cy.get('input');
+        $value.type('ae');
+
+        cy.get('.search-btn').click();
+        cy.wait(1000);
+
+        const el=cy.get('.item').eq(1);
+        el.click();
+
+        cy.get('.close-btn').click();
+
+        cy.get('.modal').should('have.class','hidden');
+    });
 
 });
