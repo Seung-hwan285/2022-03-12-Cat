@@ -12,6 +12,12 @@ export default class App {
         const top =document.createElement('div');
         top.className='top';
 
+        const darkBtn = document.createElement('button');
+
+        darkBtn.className='dark';
+        darkBtn.innerText='😸';
+
+
 
         const searchBar = new OnSearchBar(top, keyword =>{
 
@@ -23,8 +29,19 @@ export default class App {
 
         const searchResult = new OnSearchResult(bottom);
 
+        darkBtn.addEventListener("click",()=>{
+                this.darkModeChange();
+        });
+        document.body.appendChild(darkBtn);
         document.body.appendChild(top);
         document.body.appendChild(bottom);
     }
+
+    darkModeChange(){
+        let element = document.body;
+        element.classList.toggle('dark-mode');
+    }
+
+
 
 }

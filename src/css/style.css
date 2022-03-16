@@ -54,3 +54,27 @@
     background-color: orange;
     font-weight: bold;
 }
+
+
+/*다크모드*/
+body{
+    position: relative;
+    background-color: #ffff;
+}
+
+.dark{
+    position: absolute;
+    font-size: 20px;
+
+    background-color: white;
+    border-radius: 5px;
+    
+    left: 30px;
+    margin:0 auto;
+}
+
+.dark-mode{
+    background-color: black;
+    color: white;
+}
+
