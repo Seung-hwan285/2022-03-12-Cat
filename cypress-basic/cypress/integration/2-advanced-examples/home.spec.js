@@ -34,21 +34,31 @@ describe('Cat 테스트',()=> {
     //         cy.wrap($el).should('have.class','item-img'));
     // });
 
-    it('키워드 검색하면 리스트 3개만 나오는지 테스트',()=>{
+    // it('키워드 검색하면 리스트 3개만 나오는지 테스트',()=>{
+    //
+    //     let testKeyWord=['ae','no'];
+    //
+    //
+    //     testKeyWord.forEach((keyword)=>{
+    //         const $value = cy.get('input');
+    //         $value.type(keyword);
+    //         cy.get('.search-btn').click();
+    //
+    //
+    //     });
+    //     cy.get('.recent-keyword').find('.clip').should('have.length',2);
+    //
+    //
+    // });
 
-        let testKeyWord=['ae','no'];
+    it('다크모드 테스트',()=>{
 
+        let $darkBtn = cy.get('.dark');
 
-        testKeyWord.forEach((keyword)=>{
-            const $value = cy.get('input');
-            $value.type(keyword);
-            cy.get('.search-btn').click();
+        $darkBtn.click();
 
-
-        });
-        cy.get('.recent-keyword').find('.clip').should('have.length',2);
-
-
+        cy.get('body')
+            .each(($el)=>cy.wrap($el).should('have.class','dark-mode'));
     });
 
 });
