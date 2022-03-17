@@ -101,14 +101,14 @@ body{
     display: flex;
     flex-direction: column;
     background-color: white;
-    width: 40vw;
-    height: 35vw;
+    width: 45vw;
+    height: 90vh;
 }
 
-.info .info-img{
-    height: 100%;
-    object-fit: cover;
+.info .info-img {
+    height: 70%;
 }
+
 .info .info-header{
     display: flex;
     justify-content: space-between;
@@ -116,8 +116,20 @@ body{
 .info .info-header{
     font-size: 20px;
 }
+
 .info .info-header .info-title{
     margin: 10px;
+}
+
+
+.info-description{
+    display: flex;
+    flex-direction: column;
+    margin: 0px 3px 3px 3px;
+}
+
+.info .info-description p{
+
 }
 
 .info .close-btn{

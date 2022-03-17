@@ -25,8 +25,10 @@ export default class onSearchInfo{
 
             const url =this.data.url;
             console.log(url);
-            const {name,template , origin} = this.data.breeds[0];
 
+            console.log(this.data);
+            const {name,temperament , origin} = this.data.breeds[0];
+            console.log(origin);
 
         const info = document.createElement('div');
         info.className='info';
@@ -50,17 +52,17 @@ export default class onSearchInfo{
         infoDescription.className='info-description';
 
         const infoTemper =document.createElement('p');
-        infoTemper.className='info-Temper';
-
+        infoTemper.className="info-temperament";
+        infoTemper.innerText=temperament;
         const infoOrigin = document.createElement('p');
-        infoOrigin.className='info-Origin';
+        infoOrigin.className="info-origin";
+        infoOrigin.innerText=origin;
 
 
-            console.log(this.$target);
+        console.log(this.$target);
         closeBtn.addEventListener("click",()=>{
-
                 console.log(this.$target);
-               this.$target.innerHTML="";
+                this.$target.innerHTML="";
                 this.$target.classList.add('hidden');
         });
 
