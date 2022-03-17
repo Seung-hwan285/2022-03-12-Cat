@@ -79,6 +79,10 @@ body{
     color: white;
 }
 
+.dark-mode .modal .info-title, .close-btn{
+    color: black;
+}
+
 .hidden{
     visibility: hidden;
 }

@@ -54,12 +54,11 @@ export default class OnItem {
 
 
 
+
         item.appendChild(itemImg);
         item.appendChild(itemDescription);
         itemWrapper.appendChild(item);
         this.itemGroup.appendChild(itemWrapper);
-
-
 
     }
 }

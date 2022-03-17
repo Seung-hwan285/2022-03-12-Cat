@@ -7,14 +7,12 @@ describe('Cat 테스트',()=> {
     // it('키워드 별로 고양이 화면에 출력 테스트 (Click)',()=>{
     //     const $value = cy.get('input');
     //
-    //     $value.type('no');
+    //     $value.type('ae');
     //     cy.get('.search-btn').click();
     //
-    //
-    //     //img에 item-img class가 있는지로 테스트 진행
     //     cy.get('img')
     //         .each(($el)=>
-    //             cy.wrap($el).should('have.class','item-img'));
+    //             cy.wrap($el).should('have.class','info-img'));
     //
     //
     //
@@ -61,38 +59,38 @@ describe('Cat 테스트',()=> {
     //         .each(($el)=>cy.wrap($el).should('have.class','dark-mode'));
     // });
 
-    it('모달 Open 테스트',()=>{
-
-        const $value = cy.get('input');
-        $value.type('ae');
-
-        cy.get('.search-btn').click();
-        cy.wait(1000);
-
-        const el=cy.get('.item').eq(1);
-
-        el.click();
-
-
-        cy.get('.modal').should('have.class','modal');
-
-    });
-
-
-    it('모달 Close 테스트',()=>{
-
-        const $value = cy.get('input');
-        $value.type('ae');
-
-        cy.get('.search-btn').click();
-        cy.wait(1000);
-
-        const el=cy.get('.item').eq(1);
-        el.click();
-
-        cy.get('.close-btn').click();
-
-        cy.get('.modal').should('have.class','hidden');
-    });
+    // it('모달 Open 테스트',()=>{
+    //
+    //     const $value = cy.get('input');
+    //     $value.type('ae');
+    //
+    //     cy.get('.search-btn').click();
+    //     cy.wait(1000);
+    //
+    //     const el=cy.get('.item').eq(1);
+    //
+    //     el.click();
+    //
+    //
+    //     cy.get('.modal').should('have.class','modal');
+    //
+    // });
+    //
+    //
+    // it('모달 Close 테스트',()=>{
+    //
+    //     const $value = cy.get('input');
+    //     $value.type('ae');
+    //
+    //     cy.get('.search-btn').click();
+    //     cy.wait(1000);
+    //
+    //     const el=cy.get('.item').eq(1);
+    //     el.click();
+    //
+    //     cy.get('.close-btn').click();
+    //
+    //     cy.get('.modal').should('have.class','hidden');
+    // });
 
 });
