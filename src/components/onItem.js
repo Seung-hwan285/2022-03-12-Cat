@@ -1,6 +1,10 @@
+import onSearchInfo from "./onSearchInfo.js";
+
 export default class OnItem {
-    constructor(itemGroup,cat) {
+    constructor(itemGroup,cat,onClick) {
         this.itemGroup=itemGroup;
+
+        this.onClick =onClick;
         this.cat=cat;
 
         this.render();
@@ -42,10 +46,16 @@ export default class OnItem {
         itemOrigin.innerText=origin;
 
 
+        // 고양이 사진 클릭하면 모달창 등장!
         item.addEventListener("click",()=>{
-            console.log({origin});
-            const $modal = document.querySelector('.modal');
-            $modal.classList.remove('hidden');
+
+            // 클릭한 고양이 데이터 출력
+
+
+            console.log(this.cat);
+            this.onClick(this.cat);
+
+
         });
 
 

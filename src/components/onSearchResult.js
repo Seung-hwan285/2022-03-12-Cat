@@ -1,13 +1,14 @@
 import OnItem from "./onItem.js";
+import onSearchInfo from "./onSearchInfo.js";
 
 export default class OnSearchResult {
 
 
     // App.js bottom 삽입
-    constructor($target) {
+    constructor($target,onClick) {
         this.$target=$target;
-
-        this.data=[];
+        this.onClick = onClick;
+        this.data=null;
 
     }
 
@@ -34,8 +35,7 @@ export default class OnSearchResult {
 
         // 사진 그룹 , 고양이 객체 데이터
         this.data.map((cat)=>{
-
-            new OnItem(itemGroup,cat);
+            new OnItem(itemGroup,cat,this.onClick);
         });
 
         wrapper.appendChild(itemGroup);

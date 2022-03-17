@@ -1,23 +1,32 @@
 export default class onSearchInfo{
 
-    constructor($target,data) {
+
+    // modal 만들 어옴
+    constructor($target) {
         this.$target =$target;
+
+        // updateDate 통해서 값을 전달해주자
+        this.data=null;
+        this.render();
+    }
+
+
+    updateData(data){
+
+        console.log(data);
         this.data=data;
         this.render();
     }
 
 
-    render(){
 
+    render(){
         if(this.data){
 
-            const {temperment , origin , name}= this.data.breeds[0];
-            console.log(name);
-        }
+            const url =this.data.url;
+            console.log(url);
+            const {name,template , origin} = this.data.breeds[0];
 
-        const modal = document.createElement('div');
-        modal.className='modal';
-        modal.classList.add('hidden');
 
         const info = document.createElement('div');
         info.className='info';
@@ -31,10 +40,11 @@ export default class onSearchInfo{
 
         const infoTitle = document.createElement('p');
         infoTitle.className='info-title';
-        infoTitle.innerText='Norwegian Fores Cat';
+        infoTitle.innerText=name;
 
         const infoImg = document.createElement('img');
         infoImg.className='info-img';
+        infoImg.src=url
 
         const infoDescription = document.createElement('div');
         infoDescription.className='info-description';
@@ -48,7 +58,7 @@ export default class onSearchInfo{
 
 
         closeBtn.addEventListener("click",()=>{
-            modal.classList.add('hidden');
+                this.$target.classList.add('hidden');
         });
 
 
@@ -64,10 +74,9 @@ export default class onSearchInfo{
         info.appendChild(infoDescription);
 
 
-        modal.appendChild(info);
-
-        this.$target.appendChild(modal);
+        
+        this.$target.appendChild(info);
     }
-
+    }
 
 }
