@@ -55,7 +55,6 @@ export default class OnItem {
             console.log(this.cat);
             this.onClick(this.cat);
 
-
         });
 
 

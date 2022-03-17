@@ -56,11 +56,13 @@ export default class onSearchInfo{
         infoOrigin.className='info-Origin';
 
 
-
+            console.log(this.$target);
         closeBtn.addEventListener("click",()=>{
+
+                console.log(this.$target);
+               this.$target.innerHTML="";
                 this.$target.classList.add('hidden');
         });
-
 
         infoDescription.appendChild(infoTemper);
         infoDescription.appendChild(infoOrigin);
@@ -68,15 +70,11 @@ export default class onSearchInfo{
         infoHeader.appendChild(infoTitle);
         infoHeader.appendChild(closeBtn);
 
-
         info.appendChild(infoHeader);
         info.appendChild(infoImg);
         info.appendChild(infoDescription);
 
-
-        
         this.$target.appendChild(info);
+        }
     }
-    }
-
 }

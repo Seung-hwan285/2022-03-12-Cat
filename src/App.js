@@ -27,10 +27,10 @@ export default class App {
 
             api.fetchImage(keyword).then((cat)=>{
                 searchResult.updateDate(cat);
-
             });
 
         });
+
 
         const searchResult = new OnSearchResult(bottom,target=>{
 
@@ -38,9 +38,9 @@ export default class App {
             searchInfo.updateData(target);
 
             modal.classList.remove('hidden');
-
-
         });
+
+
 
         darkBtn.addEventListener("click",()=>{
                 this.darkModeChange();
@@ -54,10 +54,7 @@ export default class App {
         document.body.appendChild(top);
         document.body.appendChild(bottom);
 
-
     }
-
-
 
     darkModeChange(){
         let element = document.body;
