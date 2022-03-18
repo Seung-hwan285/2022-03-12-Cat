@@ -2,7 +2,13 @@ import OnSearchResult from "./components/onSearchResult.js";
 import OnSearchBar from "./components/onSearchBar.js";
 import {api} from "./api/fetch.js";
 import onSearchInfo from "./components/onSearchInfo.js";
+import onSearchRefresh from "./components/onSearchRefresh.js";
 
+
+//새로고침이 됬을대 생성자에서 가장 먼저 저장소에 있는 데이터를 가져와야함
+// -[x] LocalStorage 데이터 저장 (set)
+// -[x] LocalStorage 데이터 가져오기 (get)
+// -[] 가져온 get 데이터를 첫 화면에 뿌려주기
 
 export default class App {
     constructor() {
@@ -23,10 +29,25 @@ export default class App {
         modal.classList.add('hidden');
 
 
+
+        const getLocalStorage = localStorage.getItem('item');
+
+        // 얘를 화면에 뿌려줘야함
+        const getJsonParse = JSON.parse(getLocalStorage);
+
+
+
+        console.log(getJsonParse);
+        // 화면에 뿌려주는 refresh class
+        const searchRefresh = new onSearchRefresh(bottom,getJsonParse);
+
         const searchBar = new OnSearchBar(top, keyword =>{
 
             api.fetchImage(keyword).then((cat)=>{
+
                 searchResult.updateDate(cat);
+
+                localStorage.setItem('item',JSON.stringify(cat));
             });
 
         });
@@ -35,19 +56,19 @@ export default class App {
         const searchResult = new OnSearchResult(bottom,target=>{
 
             const modal = document.querySelector('.modal');
-            searchInfo.updateData(target);
 
+            searchOnInfo.updateData(target);
             modal.classList.remove('hidden');
         });
 
+
+        const searchOnInfo = new onSearchInfo(modal);
 
 
         darkBtn.addEventListener("click",()=>{
                 this.darkModeChange();
         });
 
-
-        const searchInfo =new onSearchInfo(modal);
 
         document.body.appendChild(modal);
         document.body.appendChild(darkBtn);

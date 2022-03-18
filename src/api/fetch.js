@@ -26,8 +26,6 @@ export const api = {
             responses.forEach((response)=>{
                     result=result.concat(response);
             });
-
-            console.log(result);
             return result;
         });
         },

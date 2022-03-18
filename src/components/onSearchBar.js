@@ -10,8 +10,7 @@ export default class OnSearchBar {
         this.keyWordlist=[];
     }
 
-
-    rencentKeyWordTemplate(keyword){
+    recentKeyWordTemplate(keyword){
         return `<a class="clip">${keyword}</a>`
     }
 
@@ -45,7 +44,7 @@ export default class OnSearchBar {
             let keyWordLen = this.keyWordlist.length;
 
             if(keyWordLen <=3){
-                span.innerHTML=this.keyWordlist.map(this.rencentKeyWordTemplate).join(" ");
+                span.innerHTML=this.keyWordlist.map(this.recentKeyWordTemplate).join(" ");
             }
         });
 
@@ -58,7 +57,7 @@ export default class OnSearchBar {
             let keyWordLen = this.keyWordlist.length;
 
             if(keyWordLen <= 3){
-                span.innerHTML=this.keyWordlist.map(this.rencentKeyWordTemplate).join(" ");
+                span.innerHTML=this.keyWordlist.map(this.recentKeyWordTemplate).join(" ");
             }
         });
 

@@ -1,19 +1,23 @@
-import onSearchInfo from "./onSearchInfo.js";
 
 export default class OnItem {
     constructor(itemGroup,cat,onClick) {
         this.itemGroup=itemGroup;
 
+
+        // 클릭한 고양이 사진 데이터 담겨있음
         this.onClick =onClick;
         this.cat=cat;
 
         this.render();
-
     }
 
     render() {
 
+
+        console.log(this.cat)
         const url = this.cat.url;
+
+
         const {temperament,origin} = this.cat.breeds[0];
 
 
@@ -51,8 +55,6 @@ export default class OnItem {
 
             // 클릭한 고양이 데이터 출력
 
-
-            console.log(this.cat);
             this.onClick(this.cat);
 
         });
@@ -67,6 +69,8 @@ export default class OnItem {
         item.appendChild(itemImg);
         item.appendChild(itemDescription);
         itemWrapper.appendChild(item);
+
+
         this.itemGroup.appendChild(itemWrapper);
 
     }

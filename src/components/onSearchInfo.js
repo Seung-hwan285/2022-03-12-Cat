@@ -21,6 +21,7 @@ export default class onSearchInfo{
 
 
     render(){
+        // 고양이 데이터가 있으면 실행
         if(this.data){
 
             const url =this.data.url;
@@ -59,9 +60,9 @@ export default class onSearchInfo{
         infoOrigin.innerText=origin;
 
 
-        console.log(this.$target);
+
         closeBtn.addEventListener("click",()=>{
-                console.log(this.$target);
+
                 this.$target.innerHTML="";
                 this.$target.classList.add('hidden');
         });
