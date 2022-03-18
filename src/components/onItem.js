@@ -12,8 +12,6 @@ export default class OnItem {
     }
 
     render() {
-
-
         console.log(this.cat)
         const url = this.cat.url;
 

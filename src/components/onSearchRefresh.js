@@ -5,15 +5,25 @@ export default class onSearchRefresh{
 
         this.$target=$target;
 
-
         this.cats=JsonParse;
-
 
         this.render();
     }
 
     render(){
         console.log(this.cats);
+
+        const wrapper = document.createElement('div');
+        wrapper.className='wrapper';
+
+        const itemGroup = document.createElement('div');
+
+        itemGroup.className='item-group';
+
+
+        wrapper.appendChild(itemGroup);
+        this.$target.appendChild(wrapper);
+
         this.cats.forEach((cat)=>{
 
 
@@ -21,14 +31,6 @@ export default class onSearchRefresh{
 
             const {temperament, origin} = cat.breeds[0];
 
-
-            const wrapper = document.createElement('div');
-
-            wrapper.className='wrapper';
-
-            const itemGroup = document.createElement('div');
-
-            itemGroup.className='item-group';
 
 
             const itemWrapper =document.createElement('div');
@@ -67,10 +69,9 @@ export default class onSearchRefresh{
             item.appendChild(itemDescription);
             itemWrapper.appendChild(item);
 
-
-            this.$target.appendChild(itemWrapper);
-            console.log(this.$target);
+            itemGroup.appendChild(itemWrapper);
         });
+
 
     }
 
