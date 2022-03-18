@@ -8,7 +8,7 @@ import onSearchRefresh from "./components/onSearchRefresh.js";
 //새로고침이 됬을대 생성자에서 가장 먼저 저장소에 있는 데이터를 가져와야함
 // -[x] LocalStorage 데이터 저장 (set)
 // -[x] LocalStorage 데이터 가져오기 (get)
-// -[] 가져온 get 데이터를 첫 화면에 뿌려주기
+// -[x] 가져온 get 데이터를 첫 화면에 뿌려주기
 
 export default class App {
     constructor() {
@@ -35,11 +35,8 @@ export default class App {
         // 얘를 화면에 뿌려줘야함
         const getJsonParse = JSON.parse(getLocalStorage);
 
-
-
         console.log(getJsonParse);
         // 화면에 뿌려주는 refresh class
-        const searchRefresh = new onSearchRefresh(bottom,getJsonParse);
 
         const searchBar = new OnSearchBar(top, keyword =>{
 
@@ -61,6 +58,11 @@ export default class App {
             modal.classList.remove('hidden');
         });
 
+
+        if(getLocalStorage !==null){
+            const searchRefresh = new onSearchRefresh(bottom,getJsonParse);
+
+        }
 
         const searchOnInfo = new onSearchInfo(modal);
 

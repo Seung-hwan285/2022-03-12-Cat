@@ -72,9 +72,6 @@ export default class onSearchRefresh{
             itemGroup.appendChild(itemWrapper);
         });
 
-
     }
-
-
 
 }

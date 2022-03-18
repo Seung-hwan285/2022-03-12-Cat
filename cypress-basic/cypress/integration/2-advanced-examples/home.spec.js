@@ -4,19 +4,19 @@ describe('Cat 테스트',()=> {
     });
 
 
-    // it('키워드 별로 고양이 화면에 출력 테스트 (Click)',()=>{
-    //     const $value = cy.get('input');
-    //
-    //     $value.type('ae');
-    //     cy.get('.search-btn').click();
-    //
-    //     cy.get('img')
-    //         .each(($el)=>
-    //             cy.wrap($el).should('have.class','info-img'));
-    //
-    //
-    //
-    // });
+    it('키워드 별로 고양이 화면에 출력 테스트 (Click)',()=>{
+        const $value = cy.get('input');
+
+        $value.type('ae');
+        cy.get('.search-btn').click();
+
+        cy.get('img')
+            .each(($el)=>
+                cy.wrap($el).should('have.class','info-img'));
+
+
+
+    });
     // it('키워드 별로 고양이 화면에 출력 테스트 (Enter)',()=>{
     //
     //
@@ -92,5 +92,13 @@ describe('Cat 테스트',()=> {
     //
     //     cy.get('.modal').should('have.class','hidden');
     // });
+
+    // it('새로고침했을때 랜더링 되는지  테스트',()=>{
+    //
+    //
+    //     cy.contains('Platform').click();
+    //     cy.reload();
+    // });
+
 
 });
