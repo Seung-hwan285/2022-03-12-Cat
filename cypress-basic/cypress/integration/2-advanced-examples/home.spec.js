@@ -92,23 +92,23 @@ describe('Cat 테스트',()=> {
     //
     //     cy.get('.modal').should('have.class','hidden');
     // });
-
-    it('새로고침했을때 랜더링 되는지  테스트',()=>{
-
-        const $value = cy.get('input');
-
-        $value.type('ae');
-        cy.get('.search-btn').click();
-
-
-        cy.wait(1000);
-
-        cy.reload();
-        
-        cy.get('.item-img')
-            .each(($el)=>cy.wrap($el).should('have.class','item-img'));
-
-    });
+    //
+    // it('새로고침했을때 랜더링 되는지  테스트',()=>{
+    //
+    //     const $value = cy.get('input');
+    //
+    //     $value.type('ae');
+    //     cy.get('.search-btn').click();
+    //
+    //
+    //     cy.wait(1000);
+    //
+    //     cy.reload();
+    //
+    //     cy.get('.item-img')
+    //         .each(($el)=>cy.wrap($el).should('have.class','item-img'));
+    //
+    // });
 
 
 });

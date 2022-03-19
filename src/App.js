@@ -35,7 +35,7 @@ export default class App {
         // 얘를 화면에 뿌려줘야함
         const getJsonParse = JSON.parse(getLocalStorage);
 
-        console.log(getJsonParse);
+
         // 화면에 뿌려주는 refresh class
 
         const searchBar = new OnSearchBar(top, keyword =>{

@@ -1,40 +1,49 @@
 const API_ENDPOINT = 'https://api.thecatapi.com/v1';
 
-const request = async (url) => {
+
+const request = async (url)=>{
+
     try{
 
-        let result = await fetch(url);
+        let response = await fetch(url);
 
-        return result.json();
-
+        return response.json();
     }catch (err){
-        console.error(err);
+        console.log(err);
     }
-};
+
+}
 
 
 export const api = {
 
-    fetchImage : async keyword=>{
-        const breeds = (await api.searchBreedByName(keyword)).map((breed)=>{return breed.id;});
-        const prmoisseArr = breeds.map(breed=>{
-            return request(`${API_ENDPOINT}/images/search?limit=50&breed_ids=${breed}`);
-        });
 
-        return Promise.all(prmoisseArr).then((responses)=>{
-            let result =[];
-            responses.forEach((response)=>{
-                    result=result.concat(response);
+    async fetchImage(keyword){
+            // 키워드 배열
+            const keywordArr = (await api.searchBreedByName(keyword)).map((breeds)=> {return breeds.id});
+
+            // 프로미스 배열로 가져오기
+            const prmisseArr = keywordArr.map((breed)=>{
+
+                return request(`${API_ENDPOINT}/images/search?limit=50&breed_ids=${breed}`);
             });
-            return result;
-        });
-        },
 
-    searchBreedByName: keyword => {
+            return Promise.all(prmisseArr).then((response)=>{
+                let result =[];
+                response.forEach((response)=>{
+                        result= result.concat(response);
+                    });
+
+                return result;
+            })
+
+    },
+
+    searchBreedByName(keyword) {
         return request(`${API_ENDPOINT}/breeds/search?q=${keyword}`);
     },
 
-    fetchAllImage : ()=>{
+    fetchAllImage(){
         return request(`${API_ENDPOINT}/images/search?limit=50`);
     },
 
