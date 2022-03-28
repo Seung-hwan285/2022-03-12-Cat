@@ -24,7 +24,7 @@ Vanila JavaScript만을 사용하여 구현
 ## 3. [WebStorage (localStorage)]
 [트러블 슈팅](https://www.notion.so/2022-03-18-77330126cb3045ebaac9eade1c2e303f)
 ## [4.Modal]
-[트러블 슈팅](https://www.notion.so/2022-03-17-94635073bc7d423eb42f58dc407928b6)
+[트러블 슈팅](https://www.notion.so/2022-03-17-94635073bc7d423eb42f58dc407928b6)<br>
 [트러블 슈팅](https://www.notion.so/2022-03-16-21434687565a4f9fac25c5f075376949)
 
 ## 전체 현황판
