@@ -16,13 +16,16 @@ Vanila JavaScript만을 사용하여 구현
 ## 구현 기능
 
 ## 1. [다크모드]
+[트러블 슈팅](https://www.notion.so/2022-03-17-94635073bc7d423eb42f58dc407928b6)
 
 ## 2. [API 핸들러]
+[트러블 슈팅](https://www.notion.so/2022-03-13-5e6a30c5207f4d85bb6cd1c6c96833b4)
 
 ## 3. [WebStorage (localStorage)]
-
+[트러블 슈팅](https://www.notion.so/2022-03-18-77330126cb3045ebaac9eade1c2e303f)
 ## [4.Modal]
-
+[트러블 슈팅](https://www.notion.so/2022-03-17-94635073bc7d423eb42f58dc407928b6)
+[트러블 슈팅](https://www.notion.so/2022-03-16-21434687565a4f9fac25c5f075376949)
 
 ## 전체 현황판
 [프로그래머스 과제 복기 현황판](https://www.notion.so/8986c2304a1d42349bba3eba96c2316b)
